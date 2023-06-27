@@ -5,19 +5,25 @@ require_once("Model.php");
 
 class Controlleur
 {
+    private $model;
+
+    public function __construct()
+    {
+        $this->model = new Model;
+    }
 
     public function index()
     {
-        $model = new Model();
-        $movies = $model->getAllMovies();
+
+        $movies = $this->model->getAllMovies();
         include("./views/list.php");
     }
 
     public function genre()
     {
-        $model = new Model();
+
         $genre = $_GET['q'];
-        $movies = $model->getMovieByGenre($genre);
+        $movies = $this->model->getMovieByGenre($genre);
         echo "je trouve un filme " . $genre;
         include("./views/list.php");
     }
