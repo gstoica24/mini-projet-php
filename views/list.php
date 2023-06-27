@@ -7,7 +7,3 @@ foreach ($movies as $movie) {
     echo "</li>";
 }
 echo "</ul>";
-
-
-// $horrorMovies = $model->getMovieByGenre($genre);
-// echo "je trouve un filme " . $genre;

@@ -16,7 +16,7 @@ class Controlleur
     {
 
         $movies = $this->model->getAllMovies();
-        include("./views/list.php");
+        include("./views/base.html.twig");
     }
 
     public function genre()
@@ -25,6 +25,6 @@ class Controlleur
         $genre = $_GET['q'];
         $movies = $this->model->getMovieByGenre($genre);
         echo "je trouve un filme " . $genre;
-        include("./views/list.php");
+        include("./views/base.html.twig");
     }
 }
