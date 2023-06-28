@@ -1,16 +1,20 @@
-§
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Document</title>
+		<link rel="stylesheet" href="./style/style.css">
 	</head>
 	<body>
-		<ul>
-			{% for movie in movies %}
-				<li>{{movie.titre . " " . movie.annee . " genre " . movie.genre}}</li>
-			{% endfor %}
-		</ul>
+		><section>
+			{% block form %}{% endblock %}
+		</section>
+
+		<section>
+			{% block content %}{% endblock %}
+		</section>
+
+
 	</body>
-</html></body></html>
+</html>

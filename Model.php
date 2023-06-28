@@ -46,4 +46,14 @@ class Model
         $movies =  $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $movies;
     }
+    public function searchMoviesByName(string $name)
+    {
+        // Requête pour rechercher les films par nom 
+        $sql = "SELECT * FROM movies WHERE titre LIKE :name";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(":name", "%" . $name . "%");
+        $stmt->execute();
+        $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $movies;
+    }
 }

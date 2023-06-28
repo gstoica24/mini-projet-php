@@ -3,14 +3,14 @@ require_once("Controlleur.php");
 
 
 
-
 $uri = strtok($_SERVER['REQUEST_URI'], '?');
+$ctrl = new Controlleur();
 if ($uri == "/") {
-    $ctrl = new Controlleur;
     $ctrl->index();
 } elseif ($uri == "/genre") {
-    $ctrl = new Controlleur;
     $ctrl->genre();
+} elseif ($uri == "/search") {
+    $ctrl->search();
 } else {
-    echo "Film pas trouve";
+    echo "Film non trouvé";
 }
