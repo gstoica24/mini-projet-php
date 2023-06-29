@@ -11,7 +11,7 @@ class Model
 
     public function __construct()
     {
-        echo "Construct: connect to db $this->dbname\n";
+        // echo "Construct: connect to db $this->dbname\n";
         $this->db = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
     }
 

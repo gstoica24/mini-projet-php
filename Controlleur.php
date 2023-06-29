@@ -41,7 +41,6 @@ class Controlleur
                 $movies = $this->model->getAllMovies();
             } else {
                 $movies = $this->model->searchMoviesByName($searchTerm);
-                echo "Résultats de recherche pour : " . $searchTerm;
             }
             echo $this->twig->render('list.html.twig', ['movies' => $movies]);
         }

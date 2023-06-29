@@ -1,15 +1,28 @@
 {% extends "base.html.twig" %}
 
-{% block content %}
-	<ul>
-		{% for movie in movies %}
-			<li>{{ movie.titre }}
-				{{ movie.annee }}
-				genre :
-				{{ movie.genre }}</li>
-		{% endfor %}
-	</ul>
+
+{% block photo %}
+	{# <div style="width: 50px; height: 50px; background: url({{movie.image}})"></div> #}
+
 {% endblock %}
+
+{% block content %}
+
+	{% for movie in movies %}
+		<article>
+			<img src="{{movie.image}}" alt="No picture">
+			<h2>{{ movie.titre }}</h2>
+			<p>date de sortie :
+				{{ movie.annee }}
+				genre :  
+				{{ movie.genre }}
+			</p>
+		</article>
+	{% endfor %}
+
+{% endblock %}
+
+
 
 {% block form %}
 <form action="/genre" method="post">
