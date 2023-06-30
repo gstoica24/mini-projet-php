@@ -11,6 +11,8 @@ if ($uri == "/") {
     $ctrl->genre();
 } elseif ($uri == "/search") {
     $ctrl->search();
+} elseif ($uri == "/movie" && isset($_GET['id'])) {
+    $ctrl->getMovie();
 } else {
     echo "Film non trouvé";
 }

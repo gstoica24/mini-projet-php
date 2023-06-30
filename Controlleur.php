@@ -45,4 +45,13 @@ class Controlleur
             echo $this->twig->render('list.html.twig', ['movies' => $movies]);
         }
     }
+
+    public function getMovie()
+    {
+        $id = $_GET['id'];
+        if (isset($id)) {
+            $movie = $this->model->getOneMovie($id);
+            echo $this->twig->render('movie.html.twig', ['movie' => $movie]);
+        }
+    }
 }

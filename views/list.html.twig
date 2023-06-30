@@ -1,14 +1,8 @@
 {% extends "base.html.twig" %}
-
-
-{% block photo %}
-	{# <div style="width: 50px; height: 50px; background: url({{movie.image}})"></div> #}
-
-{% endblock %}
-
 {% block content %}
 
 	{% for movie in movies %}
+	<a href="">
 		<article>
 			<img src="{{movie.image}}" alt="No picture">
 			<h2>{{ movie.titre }}</h2>
@@ -18,6 +12,7 @@
 				{{ movie.genre }}
 			</p>
 		</article>
+	</a>
 	{% endfor %}
 
 {% endblock %}

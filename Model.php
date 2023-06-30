@@ -25,6 +25,17 @@ class Model
         return $movies;
     }
 
+    public function getOneMovie($id)
+    {
+        // Une requête pour afficher une films
+        $sql = "SELECT * FROM movies WHERE id = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $movie = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $movie;
+    }
+
     public function getMovieByGenre(string $genre)
     {
         //Une requête pour afficher tous les films d'un certain genre

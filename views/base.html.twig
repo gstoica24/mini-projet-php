@@ -17,16 +17,11 @@
     </header>
 
     <main>
+      {% if movies %}
       <section class="page">
-        <h1>Welcome to the future of streaming</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Consequuntur, ad dolorum commodi exercitationem at sequi dolores.
-          Recusandae deserunt suscipit minima eos labore molestias, quam omnis.
-          Temporibus aspernatur aliquam delectus odio!
-        </p>
-        {# {% block photo %}{% endblock %} #}
+        <img src="../style/image/test.png" width="100%" alt="" />
       </section>
+      {% else %} {% block section %}{% endblock %} {% endif %}
 
       <section class="content">{% block content %}{% endblock %}</section>
     </main>
